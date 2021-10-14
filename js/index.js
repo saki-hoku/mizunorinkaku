@@ -1,3 +1,4 @@
+// スライドショー
 var swiper = new Swiper(".mySwiper", {
 	loop: true,
 	effect: "fade",
@@ -14,19 +15,16 @@ var swiper = new Swiper(".mySwiper", {
 	}
 });
 
-const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
-for (let i = 0; i < smoothScrollTrigger.length; i++){
-	smoothScrollTrigger[i].addEventListener('click', (e) => {
-		e.preventDefault();
-		let href = smoothScrollTrigger[i].getAttribute('href');
-		let targetElement = document.getElementById(href.replace('#', ''));
-		const rect = targetElement.getBoundingClientRect().top;
-		const offset = window.pageYOffset;
-		const gap = 60;
-		const target = rect + offset - gap;
-		window.scrollTo({
-			top: target,
-			behavior: 'smooth',
-		});
-	});
-}
+// スムーススクロール
+$(function () {
+  $('a.js-scroll[href^="#"]').click(function () {
+    var href = $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+　　 var speed = 400;
+    $("html, body").animate({
+      scrollTop: position
+    }, speed, "swing");
+    return false;
+  });
+});
