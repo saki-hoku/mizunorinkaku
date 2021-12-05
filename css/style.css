@@ -1228,25 +1228,18 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-.header {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 15px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+.logo-wrap {
+  padding: 20px;
 }
 @media (max-width: 767px) {
-  .header {
-    padding: 10px 3%;
+  .logo-wrap {
+    padding: 15px;
   }
 }
 
 .logo {
   width: 140px;
+  margin: 0 auto;
 }
 .logo a {
   display: block;
@@ -1270,18 +1263,28 @@ button.swiper-pagination-bullet {
   }
 }
 
+.menu-wrap {
+  border-top: 1px solid #0A1B4B;
+  border-bottom: 1px solid #0A1B4B;
+  padding: 6px 20px;
+}
+@media (max-width: 767px) {
+  .menu-wrap {
+    padding: 6px;
+  }
+}
+
 .menu {
-  margin-top: 6px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  margin-left: auto;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  max-width: 550px;
 }
 .menu .menu__item {
   font-size: 1.8rem;
@@ -1293,29 +1296,21 @@ button.swiper-pagination-bullet {
     line-height: 1.7;
   }
 }
-.menu .menu__item:nth-child(n+2) {
-  margin-left: 60px;
-}
-.menu .menu__item a {
-  text-decoration: underline;
-}
 .menu .menu__item a:hover {
-  text-decoration: none;
-}
-@media (max-width: 767px) {
-  .menu .menu__item:nth-child(n+2) {
-    margin-left: 30px;
-  }
+  opacity: 0.7;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 .mainVisual {
   max-width: 1040px;
   padding: 0 20px;
-  margin: 0 auto;
+  margin: 25px auto 0;
 }
 @media (max-width: 767px) {
   .mainVisual {
     padding: 0;
+    margin-top: 0;
   }
 }
 .mainVisual .swiper img {
@@ -1464,41 +1459,47 @@ button.swiper-pagination-bullet {
 }
 
 .column {
-  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 .column img {
   width: 100%;
 }
+.column .column__item {
+  width: 48%;
+}
 .column .column__item:nth-child(n+2) {
-  margin-top: 15px;
+  margin-top: 0;
+  margin-left: 4%;
 }
 .column .column__item > *:first-child {
   margin-top: 0;
 }
-@media (min-width: 1040px) {
+@media (max-width: 767px) {
   .column {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 20px;
   }
   .column .column__item {
-    width: 48%;
+    width: 100%;
   }
   .column .column__item:nth-child(n+2) {
-    margin-top: 0;
-    margin-left: 4%;
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
 
 .instagram-icon {
-  margin-right: auto;
-  margin-left: auto;
+  margin: 40px auto 0;
 }
 .instagram-icon a {
   margin: 0 auto;
+  max-width: 180px;
+  height: 180px;
+  padding: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1516,16 +1517,6 @@ button.swiper-pagination-bullet {
 }
 .instagram-icon img {
   width: 100%;
-}
-@media (min-width: 1040px) {
-  .instagram-icon {
-    margin-top: 40px;
-  }
-  .instagram-icon a {
-    max-width: 180px;
-    height: 180px;
-    padding: 35px;
-  }
 }
 @media (max-width: 767px) {
   .instagram-icon {
@@ -1572,6 +1563,13 @@ button.swiper-pagination-bullet {
   display: block;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  width: 23.5%;
+}
+.instagram .instagram__item:not(:first-child, :nth-child(4n+1)) {
+  margin-left: 2%;
+}
+.instagram .instagram__item:nth-child(n+5) {
+  margin-top: 20px;
 }
 .instagram .instagram__item:hover {
   opacity: 0.7;
@@ -1581,23 +1579,15 @@ button.swiper-pagination-bullet {
 .instagram .instagram__item img {
   width: 100%;
 }
-@media (min-width: 1040px) {
-  .instagram .instagram__item {
-    width: 23.5%;
-  }
-  .instagram .instagram__item:not(:first-child, :nth-child(4n+1)) {
-    margin-left: 2%;
-  }
-  .instagram .instagram__item:nth-child(n+5) {
-    margin-top: 20px;
-  }
-}
 @media (max-width: 767px) {
   .instagram .instagram__item {
     width: 32%;
   }
-  .instagram .instagram__item:nth-child(n+2):not(:nth-child(3n+1)) {
+  .instagram .instagram__item:nth-child(n+2) {
     margin-left: 2%;
+  }
+  .instagram .instagram__item:nth-child(3n+1) {
+    margin-left: 0;
   }
   .instagram .instagram__item:nth-child(n+4) {
     margin-top: 15px;
